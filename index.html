@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <title>Home</title>
+    <style>
+        .third-card {
+            width: 45%;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .CaseStudyCards>div:not(.third-card):hover~.third-card {
+            width: 25%;
+        }
+
+        .CaseStudyCards>div:not(.third-card):hover~.third-card .third-card-content {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .CaseStudyCards>div:not(.third-card):hover {
+            width: 50%;
+        }
+
+        .CaseStudyCards:hover>div:not(:hover) {
+            width: 25%;
+        }
+    </style>
+
+</head>
+
+<body style="padding: 0; margin: 0; overflow-x: hidden;">
+    <div class="flex flex-col h-screen w-screen overflow-x-hidden bg-[#0F1412]"
+        style="background-image: url(/Assets/HeaderSectionbgimg.png);">
+        <div class="w-full">
+            <nav class="w-[100%] z-20 top-0 start-0 border-gray-200 dark:border-gray-600">
+                <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
+                    <a href="#" class="flex items-center space-x-4 rtl:space-x-reverse">
+                        <img src="/Assets/navlogo.svg" class="xs:h-7 sm:h-8 lg:h-12" alt="Flowbite Logo"/>
+                    </a>
+                    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                        <button type="button"
+                            class="text-white bg-pink-700 focus:ring-4 focus:outline-none focus:ring-pink-700 font-medium font-bold tracking-widest rounded-lg text-sm md:px-8 md:py-3 lg:px-8 lg:py-3 text-center bg-pink-600 hover:bg-yellow-500 dark:hover:text-yellow-400 dark:focus:ring-black xs:px-4">
+                            Get started
+                        </button>
+                        <button data-collapse-toggle="navbar-sticky" type="button"
+                            class="inline-flex items-center bg-yellow-500 p-2 mx-3 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-white focus:outline-none focus:ring-2 focus:ring-white dark:text-white dark:hover:bg-yellow-500 dark:focus:ring-black"
+                            aria-controls="navbar-sticky" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 17 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="justify-around hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                        <ul
+                            class="flex flex-col md:p-0 text-md font-serif tracking-widest md:space-x-[35px] rtl:space-x-reverse md:flex-row md:mt-0">
+                            <li class="py-2 px-2">
+                                <a href="#"
+                                    class="block text-white hover:text-yellow-400 md:bg-transparent md:text-yellow-700 md:p-0 md:dark:text-yellow-500"
+                                    aria-current="page">Home</a>
+                            </li>
+                            <li class="py-2 px-2">
+                                <a href="#"
+                                    class="block text-white hover:bg-yellow-500 md:hover:bg-transparent md:hover:text-yellow-500 md:p-0 md:dark:hover:text-yellow-500 dark:text-white dark:hover:bg-yellow-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-yellow-500">Portfolio</a>
+                            </li>
+                            <li class="py-2 px-2">
+                                <a href="#"
+                                    class="block text-white hover:bg-yellow-500 md:hover:bg-transparent md:hover:text-yellow-500 md:p-0 md:dark:hover:text-yellow-500 dark:text-white dark:hover:bg-yellow-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-yellow-500">Pricing</a>
+                            </li>
+                            <li class="py-2 px-2">
+                                <a href="#"
+                                    class="block text-white hover:bg-yellow-500 md:hover:bg-transparent md:hover:text-yellow-500 md:p-0 md:dark:hover:text-yellow-500 dark:text-white dark:hover:bg-yellow-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-yellow-500">About</a>
+                            </li>
+                            <li class=" py-2 px-2">
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                                    class="flex items-center justify-between w-full  text-white rounded hover:bg-yellow-500 md:hover:bg-transparent md:border-0 md:hover:text-white  md:w-auto dark:text-white md:dark:hover:text-yellow-500 dark:focus:text-white dark:border-yellow-500 dark:hover:bg-yellow-500 md:dark:hover:bg-transparent">Pages
+                                    <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 4 4 4-4" />
+                                    </svg></button>
+                                <div id="dropdownNavbar"
+                                    class="z-10 hidden font-normal bg-black divide-y divide-yellow-100 rounded-lg shadow dark:bg-black dark:divide-yellow-600">
+                                    <ul class="py-2 xs:text-sm text-white dark:text-white"
+                                        aria-labelledby="dropdownLargeButton">
+                                        <li>
+                                            <a href="#"
+                                                class="block px-4 py-2 hover:bg-yellow-500 dark:hover:bg-black dark:hover:text-yellow-400">Services</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="block px-4 py-2 hover:bg-yellow-500 dark:hover:bg-black dark:hover:text-yellow-400">Our
+                                                Blog</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="block px-4 py-2 hover:bg-yellow-500 dark:hover:bg-black dark:hover:text-yellow-400">Blog
+                                                Detail</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="block px-4 py-2 hover:bg-yellow-500 dark:hover:bg-black dark:hover:text-yellow-400">Team</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="block px-4 py-2 hover:bg-yellow-500 dark:hover:bg-black dark:hover:text-yellow-400">Testimonials</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="block px-4 py-2 hover:bg-yellow-500 dark:hover:bg-black dark:hover:text-yellow-400">FAQs</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="block px-4 py-2 hover:bg-yellow-500 dark:hover:bg-black dark:hover:text-yellow-400">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="headerSection flex w-[100%] mt-[30px] flex-col lg:flex-row gap-5 lg:gap-3">
+            <div class="w-full lg:w-[40%] pl-5 lg:pl-[120px] mt-[80px] flex flex-col items-center lg:items-start">
+                <h1 class="text-7xl text-white font-bold">Digital Marketing Partner</h1>
+                <hr class="mt-[90px] ml-[50px]" style="transform: rotate(270deg); 
+                    width: 140px;
+                    height: 2px;
+                    color: #676767;
+                    opacity: 0.6;">
+                <div class="flex  justify-center gap-16">
+                    <div class="mt-[80px]">
+                        <h3 class="flex justify-center text-yellow-400 font-bold text-4xl">#1</h3>
+                        <p class="text-white text-lg font-serif">Agency in World</p>
+                    </div>
+                    <div class="mt-[70px]">
+                        <img src="/Assets/HeroSectionWinnerimg.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div
+                class="w-[100%] lg:w-[70%] h-[100%] mt-[10px] bg-yellow-500 rounded-[100%] px-[20px] mr-[100px] overflow-y-hidden">
+                <div class="flex">
+                    <img class=" w-[70%] lg:w-[100%] h-[100%] mt-[60px]" src="../Assets/Hero_girl.png" alt="">
+                    <div class="mt-[250px] hidden md:block lg:block">
+                        <div class="flex gap-2 px-[20px]">
+                            <img src="/Assets/Thumbimg.svg" alt="">
+                            <div>
+                                <h4 class="text-black font-bold text-4xl" style="font-family: 'Rubik', sans-serif">4.8
+                                </h4>
+                                <p class="text-black text-lg tracking-wide">Rating on Clutch</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="px-[20px] py-[10px] text-md">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Sit error odio corrupti facere cumque tenetur animi accusantium pariatur, debitis
+                                aspernatur vero, quia sapiente.</p>
+                        </div>
+                        <div>
+                            <a href="#" class="px-[20px] text-md hover:text-white font-serif tracking-wider">Learn More
+                                ></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="block md:hidden lg:hidden text-white items-center">
+                <div class="flex gap-3 px-[20px]">
+                    <img src="/Assets/Thumbimg.svg" alt="">
+                    <div>
+                        <h4 class=" font-bold text-4xl" style="font-family: 'Rubik', sans-serif">4.8</h4>
+                        <p class=" text-lg tracking-wide">Rating on Clutch</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="px-[20px] py-[10px] text-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
+                        error odio corrupti facere cumque tenetur animi accusantium pariatur, debitis aspernatur vero,
+                        quia sapiente. Cum libero suscipit perferendis est et beatae nesciunt, ex nemo illo iure
+                        voluptas?</p>
+                </div>
+                <div>
+                    <a href="#" class="px-[20px] text-md hover:text-white font-serif tracking-wider">Learn More ></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-[100%] mt-20 lg:pl-20 lg:pb-20">
+            <div class="HeadSectionCards flex flex-col justify-around lg:flex-row">
+                <div class="w-[100%] lg:w-[30%]">
+                    <a href="#"
+                        class="block md:w-[100%] lg:max-w-sm p-20 bg-black rounded-lg border-1 border-[#464646] outline-none shadow hover:bg-pink-400 dark:bg-black dark:border-[#464646] dark:hover:bg-pink-700">
+                        <h5
+                            class="mb-2 text-6xl font-bold tracking-wide text-white dark:text-white flex justify-center">
+                            +150%</h5>
+                        <p class="font-normal text-white dark:text-white flex justify-center">Lorem ipsum dolor sit
+                            amet.</p>
+                    </a>
+                </div><br><br>
+                <div class="w-[100%] lg:w-[30%]">
+                    <a href="#"
+                        class="block md:w-[100%] lg:max-w-sm p-20 bg-pink-700 rounded-lg shadow border-1 border-[#464646] outline-none  dark:bg-pink-700 dark:border-[#464646]">
+                        <h5
+                            class="mb-2 text-6xl font-bold tracking-wide text-white dark:text-white flex justify-center">
+                            +87k</h5>
+                        <p class="font-normal text-white dark:text-white flex justify-center">Lorem ipsum dolor sit
+                            amet.</p>
+                    </a>
+                </div><br><br>
+                <div class="w-[100%] lg:w-[30%]">
+                    <a href="#"
+                        class="block md:w-[100%] lg:max-w-sm p-20 bg-black rounded-lg shadow border-1 border-[#464646] outline-none hover:bg-pink-400 dark:bg-black dark:border-[#464646] dark:hover:bg-pink-700">
+                        <h5
+                            class="mb-2 text-6xl font-bold tracking-wide text-white dark:text-white flex justify-center">
+                            +20M</h5>
+                        <p class="font-normal text-white dark:text-white flex justify-center">Lorem ipsum dolor sit
+                            amet.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="w-[100%] bg-[#212322] pt-[100px] pb-[100px]"
+            style="background-image: url(/Assets/HeaderSectionbgimg.png);">
+            <div class="flex flex-col lg:flex-row justify-center gap-10 relative">
+                <div
+                    class="w-[100%] h-[100%] pt-[50px] pb-[50px] pl-[30px] lg:pt-[160px] lg:pb-[350px] lg:pl-[80px] lg:pr-[30px] lg:w-[46%] lg:h-[100vh] bg-yellow-400 rounded-xl lg:rounded-[100%]">
+                    <h1 class="text-5xl font-bold font-serif">The right digital partner for success</h1>
+                </div>
+
+                <div class="w-[100%] lg:w-[35%] lg:pt-[120px] lg:pl-[40px] lg:pr-[100px]">
+                    <p class="text-white text-md px-[20px]">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Pariatur autem,
+                        fugiat repudiandae ab ut adipisci ex suscipit quis mollitia doloribus accusamus aliquam minus
+                        similique vel officia. Velit blanditiis atque dolores.</p>
+                </div>
+
+                <div class="hidden lg:flex flex-col lg:flex-row lg:justify-center gap-[90px] absolute top-[45%]">
+                    <div class="w-[100%] lg:w-[25%] bg-[#FFF7E1] rounded-[30px] px-3 py-4">
+                        <img src="/Assets/Searchcardimg.svg" alt="">
+                        <h4 class="text-2xl font-bold">Search Engine Optimization</h4>
+                    </div>
+                    <div class="w-[100%] lg:w-[25%] bg-[#FFF7E1] rounded-[30px] px-3 py-4">
+                        <img src="/Assets/Marketingcardimg.svg" alt="">
+                        <h4 class="text-2xl font-bold">Marketing & Advertisement</h4>
+                    </div>
+                    <div class="w-[100%] lg:w-[25%] bg-[#FFF7E1] rounded-[30px] px-3 py-4">
+                        <img src="/Assets/Analysiscardimg.svg" alt="">
+                        <h4 class="text-2xl font-bold">Reporting & Analysis</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative mt-[50px] flex justify-center block lg:hidden">
+                <div class="flex flex-col lg:flex-row justify-center gap-[90px]">
+                    <div class="w-[100%] lg:w-[25%] bg-[#FFF7E1] rounded-[30px] px-3 py-4">
+                        <img src="/Assets/Searchcardimg.svg" alt="">
+                        <h4 class="text-2xl font-bold">Search Engine Optimization</h4>
+                    </div>
+                    <div class="w-[100%] lg:w-[25%] bg-[#FFF7E1] rounded-[30px] px-3 py-4">
+                        <img src="/Assets/Marketingcardimg.svg" alt="">
+                        <h4 class="text-2xl font-bold">Marketing & Advertisement</h4>
+                    </div>
+                    <div class="w-[100%] lg:w-[25%] bg-[#FFF7E1] rounded-[30px] px-3 py-4">
+                        <img src="/Assets/Analysiscardimg.svg" alt="">
+                        <h4 class="text-2xl font-bold">Reporting & Analysis</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-[100%] mt-[100px]">
+                <div class="flex flex-col lg:flex-row justify-center gap-4">
+                    <div class="border-1 border-[#464646] p-[30px] hover:bg-black">
+                        <a href="#">
+                            <img src="/Assets/logoipsum_Dark_1.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="border-1 border-[#464646] p-[30px] hover:bg-black">
+                        <a href="#">
+                            <img src="/Assets/logoipsum_Dark_2.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="border-1 border-[#464646] p-[30px] hover:bg-black">
+                        <a href="#">
+                            <img src="/Assets/logoipsum_Dark_3.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="border-1 border-[#464646] p-[30px] hover:bg-black">
+                        <a href="#">
+                            <img src="/Assets/logoipsum_Dark_4.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="border-1 border-[#464646] p-[30px] hover:bg-black">
+                        <a href="#">
+                            <img src="/Assets/logoipsum_Dark_5.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-[100%] mt-[70px]">
+                <div class="CaseStudySection">
+                    <div class="flex justify-center">
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl text-white font-bold font-serif tracking-wider">Our
+                            Case
+                            Studies</h1>
+                    </div>
+                    <div class="mt-[20px]">
+                        <p class="text-white text-md px-[30px] flex justify-center">Lorem ipsum dolor sit amet
+                            consectetur.
+                            In nulla nunc arcu
+                            velit consectetur massa mauris molestie hac. Hac arcu amet nullam pellentesque.
+                        </p>
+                        <p class="text-white text-md px-[30px] flex justify-center">Urna eususpendisse felis sodales sit
+                            non.</p>
+                    </div>
+                    <div
+                        class="CaseStudyCards w-[100%] flex flex-col lg:flex-row gap-[12px] px-[30px] lg:px-[100px] mt-[40px]">
+                        <div
+                            class="w-[100%] lg:hover:cursor-pointer lg:w-[25%] lg:hover:w-[50%] group relative lg:transition-all lg:duration-[0.6s] lg:ease-in-out lg:transform">
+                            <div class="overflow-hidden relative">
+                                <img class="w-[100%] lg:w-[100%] h-[500px] rounded-xl object-cover"
+                                    src="/Assets/case-study-1.png" alt="">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex flex-col items-center justify-center lg:bg-black lg:bg-opacity-50 opacity-100 lg:opacity-0 lg:transition-opacity lg:duration-[0.6s] lg:group-hover:opacity-100">
+                                <h1 class="text-xl md:text-4xl lg:text-4xl text-white font-bold mb-[10px] font-serif">
+                                    Content Management</h1>
+                                <p class="text-md text-white">Lorem ipsum dolor sit amet consectetur.</p>
+                                <div class="mt-[10px]">
+                                    <button
+                                        class="bg-pink-600 text-white font-bold px-[30px] py-[10px] hover:bg-yellow-400 rounded-xl">Get
+                                        started</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="w-[100%] lg:hover:cursor-pointer lg:w-[25%] lg:hover:w-[50%] group relative lg:transition-all lg:duration-[0.6s] lg:ease-in-out lg:transform">
+                            <div class="overflow-hidden relative">
+                                <img class="w-[100%] lg:w-[100%] h-[500px] rounded-xl object-cover"
+                                    src="/Assets/case-study-2.png" alt="">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex flex-col items-center justify-center lg:bg-black lg:bg-opacity-50 opacity-100 lg:opacity-0 lg:transition-opacity lg:duration-[0.6s] lg:group-hover:opacity-100">
+                                <h1 class="text-xl md:text-4xl lg:text-4xl text-white font-bold mb-[10px] font-serif">
+                                    Strategy Maker</h1>
+                                <p class="text-md text-white">Lorem ipsum dolor sit amet consectetur.</p>
+                                <div class="mt-[10px]">
+                                    <button
+                                        class="bg-pink-600 text-white font-bold px-[30px] py-[10px] hover:bg-yellow-400 rounded-xl">Get
+                                        started</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="w-[100%] lg:hover:cursor-pointer lg:w-[45%] group relative lg:transition-all lg:duration-[0.6s] lg:ease-in-out lg:transform third-card">
+                            <div class="overflow-hidden relative">
+                                <img class="w-[100%] lg:w-[100%] h-[500px] rounded-xl object-cover"
+                                    src="/Assets/case-study-3.png" alt="">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex flex-col items-center justify-center lg:bg-black lg:bg-opacity-30 opacity-100 lg:opacity-0 lg:transition-opacity lg:duration-[0.6s] lg:group-hover:opacity-100 third-card-content">
+                                <h1 class="text-xl md:text-4xl lg:text-4xl text-white font-bold mb-[10px] font-serif">VR
+                                    Management</h1>
+                                <p class="text-md text-white">Lorem ipsum dolor sit amet consectetur.</p>
+                                <div class="mt-[10px]">
+                                    <button
+                                        class="bg-pink-600 text-white font-bold px-[30px] py-[10px] hover:bg-yellow-400 rounded-xl">Get
+                                        started</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="w-[100%] lg:hover:cursor-pointer lg:w-[25%] lg:hover:w-[50%] group relative lg:transition-all lg:duration-[0.6s] lg:ease-in-out lg:transform">
+                            <div class="overflow-hidden relative">
+                                <img class="w-[100%] lg:w-[100%] h-[500px] rounded-xl object-cover"
+                                    src="/Assets/case-study-4.png" alt="">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex flex-col items-center justify-center lg:bg-black lg:bg-opacity-50 opacity-100 lg:opacity-0 lg:transition-opacity lg:duration-[0.6s] lg:group-hover:opacity-100">
+                                <h1 class="text-xl md:text-4xl lg:text-4xl text-white font-bold mb-[10px] font-serif">
+                                    Online
+                                    Management</h1>
+                                <p class="text-md text-white">Lorem ipsum dolor sit amet consectetur.</p>
+                                <div class="mt-[10px]">
+                                    <button
+                                        class="bg-pink-600 text-white font-bold px-[30px] py-[10px] hover:bg-yellow-400 rounded-xl">Get
+                                        started</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-[100%] bg-[#E6B938]" style="background-image: url(/Assets/Marketingbgimg.png);">
+        <div class="MarketHead">
+            <h1 class="text-transparent text-5xl md:text-8xl lg:text-[17.4vw] font-bold flex justify-center"
+                style="-webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white;">MARKITING</h1>
+        </div>
+        <div class="MarketingDetail flex flex-col lg:flex-row justify-center gap-2 relative">
+            <div class="lg:w-[30%]"></div>
+            <div
+                class="w-[60%] lg:w-[40%] absolute top-[35%] left-[28%] md:top-[45%] md:left-[33%] lg:top-[34%] lg:left-[10%]">
+                <h1 class="text-white text-3xl md:text-5xl lg:text-7xl font-bold">Search Engine Optimization</h1>
+            </div>
+            <div class="w-[100%] lg:w-[40%]  bg-black rounded-[100%] flex justify-center">
+                <img class="w-[400px] md:w-[400px] md:h-[600px] lg:w-[450px] lg:h-[650px] lg:mt-[-100px]"
+                    src="/Assets/Seo_Girl.png" alt="">
+            </div>
+            <div class="w-[100%] px-[25px] lg:w-[30%] lg:pt-[200px] lg:px-[20px]">
+                <p>Lorem ipsum dolor sit amet consectetur. In nulla nunc arcu velit consectetur massa mauris molestie
+                    hac. Hac arcu amet nullam pellentesque. Urna eu suspendisse felis sodales sit non.</p>
+                <div class="pb-[20px] mt-[20px] flex justify-center lg:justify-start">
+                    <button class="bg-black text-white font-bold px-[30px] py-[10px] hover:bg-yellow-400 rounded-xl">Get
+                        started</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-[100%] bg-[#fff] pt-[100px] pb-[100px] px-[20px] lg:px-[100px]">
+        <div class="flex flex-col lg:flex-row justify-center gap-10 pb-[70px]">
+            <div class="w-[100%] lg:w-[50%]">
+                <img class="w-[100%] h-[100%] rounded-[40px]" src="/Assets/ServicesOfferImg.png" alt="">
+            </div>
+            <div class="w-[100%] lg:w-[50%] pt-[100px]">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold pb-[20px]">We offer the best services</h1>
+                <p class="text-md lg:text-lg pb-[20px]">Lorem ipsum dolor sit amet consectetur. In nulla nunc arcu velit
+                    consectetur massa mauris molestie hac. Hac arcu amet nullam pellentesque. Urna eu suspendisse felis
+                    sodales sit non.</p>
+                <div>
+                    <button class="bg-black text-white font-bold px-[30px] py-[10px] hover:bg-yellow-400 rounded-xl">Get
+                        started</button>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-5">
+            <div class="w-[100%] lg:w-[25%] bg-[#FFF7E1] rounded-xl px-[25px]">
+                <div>
+                    <img src="/Assets/OfferSocial_1.svg" alt="">
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold pb-[20px]">Email Marketing</h1>
+                    <p class="text-md">Lorem ipsum dolor sit amet consectetur. In nulla nunc arcu velit consectetur
+                        massa mauris.</p>
+                    <div class="pb-[10px]">
+                        <button class="bg-transparent text-black font-bold py-[10px] hover:bg-black rounded-xl">Get
+                            started > </button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[100%] lg:w-[25%] bg-[#FFF7E1] rounded-xl px-[25px]">
+                <div>
+                    <img src="/Assets/OfferSocial_2.svg" alt="">
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold pb-[20px]">Social Media</h1>
+                    <p class="text-md">Lorem ipsum dolor sit amet consectetur. In nulla nunc arcu velit consectetur
+                        massa mauris.</p>
+                    <div class="pb-[10px]">
+                        <button class="bg-transparent text-black font-bold py-[10px] hover:bg-black rounded-xl">Get
+                            started > </button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[100%] lg:w-[25%] bg-[#FFF7E1] rounded-xl px-[25px]">
+                <div>
+                    <img src="/Assets/OfferSocial_3.svg" alt="">
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold pb-[20px]">Website Design</h1>
+                    <p class="text-md">Lorem ipsum dolor sit amet consectetur. In nulla nunc arcu velit consectetur
+                        massa mauris.</p>
+                    <div class="pb-[10px]">
+                        <button class="bg-transparent text-black font-bold py-[10px] hover:bg-black rounded-xl">Get
+                            started > </button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[100%] lg:w-[25%] bg-[#FFF7E1] rounded-xl px-[25px]">
+                <div>
+                    <img src="/Assets/OfferSocial_4.svg" alt="">
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold pb-[20px]">Digital Marketing</h1>
+                    <p class="text-md">Lorem ipsum dolor sit amet consectetur. In nulla nunc arcu velit consectetur
+                        massa mauris.</p>
+                    <div class="pb-[10px]">
+                        <button class="bg-transparent text-black font-bold py-[10px] hover:bg-black rounded-xl">Get
+                            started > </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-[100%] flex flex-col lg:flex-row gap-10 bg-black pb-[90px]">
+        <div class="w-[100%] lg:w-[50%] px-[20px] lg:px-[50px] mt-[100px]">
+            <div>
+                <h1 class="text-white text-3xl md:text-5xl lg:text-6xl font-bold pb-[20px]">Crafting experiences,
+                    delivering success</h1>
+                <p class="text-white text-md lg:text-lg">Lorem ipsum dolor sit amet consectetur. In nulla nunc arcu
+                    velit consectetur massa mauris molestie hac. Hac arcu amet nullam pellentesque. Urna eu suspendisse
+                    felis sodales sit non.</p>
+                <div class="flex gap-1 mt-[20px]">
+                    <div class="lg:pt-[20px]">
+                        <h1
+                            class="bg-yellow-400 rounded-[100%] lg:text-3xl font-bold flex justify-center items-center px-[15px] py-[10px] lg:px-[20px] lg:py-[10px]">
+                            1</h1>
+                    </div>
+                    <div class="lg:px-[20px]">
+                        <h1 class="text-white md:text-2xl lg:text-2xl font-bold">Quality Assurance</h1>
+                        <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit ad debitis
+                            sequi quia!.</p>
+                    </div>
+                </div>
+                <div class="flex gap-1 mt-[20px]">
+                    <div class="lg:pt-[20px]">
+                        <h1
+                            class="bg-yellow-400 rounded-[100%] lg:text-3xl font-bold flex justify-center items-center px-[15px] py-[10px] lg:px-[20px] lg:py-[10px]">
+                            2</h1>
+                    </div>
+                    <div class="lg:px-[20px]">
+                        <h1 class="text-white text-xl md:text-2xl lg:text-2xl font-bold">Certified Professionals</h1>
+                        <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit ad debitis
+                            sequi quia!.</p>
+                    </div>
+                </div>
+                <div class="flex gap-1 mt-[20px]">
+                    <div class="lg:pt-[20px]">
+                        <h1
+                            class="bg-yellow-400 rounded-[100%] lg:text-3xl font-bold flex justify-center items-center px-[15px] py-[10px] lg:px-[20px] lg:py-[10px]">
+                            3</h1>
+                    </div>
+                    <div class="lg:px-[20px]">
+                        <h1 class="text-white text-xl md:text-2xl lg:text-2xl font-bold">Real Experiences</h1>
+                        <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit ad debitis
+                            sequi quia!.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center lg:flex-row gap-4 mt-[40px] pl-[20px]">
+                    <div>
+                        <button
+                            class="bg-pink-600 text-white font-bold px-[30px] py-[10px] hover:bg-yellow-400 rounded-xl">Get
+                            started</button>
+                    </div>
+                    <div>
+                        <button
+                            class="bg-black text-white font-bold px-[30px] py-[10px] hover:bg-black rounded-xl border-1 border-gray-500">Learn
+                            More ></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="w-[100%] h-[100%] lg:w-[50%] lg:h-100% bg-yellow-400 rounded-[100%] overflow-y-hidden lg:px-[50px] mt-[70px] relative">
+            <div class="pt-[40px]">
+                <img class="w-[450px] h-[650px] sm:w-[450px] sm:h-[650px] md:w-[450px] md:h-[650px] lg:w-[420px] lg:h-[700px]"
+                    src="/Assets/Experiences_girl.png" alt="">
+                <div class="lg:w-[30%] absolute top-[45%] left-[22%] lg:top-[35%] lg:left-[50%]">
+                    <h1 class="text-white text-7xl font-bold">Why Choose Us</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-[100%] bg-[#fff] pt-[100px] pb-[100px] px-[20px]">
+        <div>
+            <h1 class="text-5xl md:text-7xl lg:text-7xl font-bold flex justify-center pb-[20px]">Pricing Plan</h1>
+            <p class="lg:text-lg flex justify-center">Lorem ipsum dolor sit amet consectetur. In nulla nunc arcu velit
+                consectetur massa mauris molestie hac.</p>
+            <p class="lg:text-lg flex justify-center">Hac arcu amet nullam pellentesque.</p>
+        </div>
+        <div class="flex flex-col lg:flex-row justify-center gap-5">
+            <div
+                class="w-[100%] h-[100%] lg:w-[25%] lg:h-[550px] mt-[50px] pt-[40px] pb-[20px] lg:px-[40px] lg:pt-[70px] bg-[#FFF7E1] rounded-[20px]">
+                <h1 class="flex justify-center mb-[20px]"><span
+                        class="bg-yellow-500 px-[20px] py-[5px] rounded-[20px]">Special</span></h1>
+                <h1 class="flex justify-center mb-[20px]"><b
+                        class="text-4xl md:text-6xl lg:text-5xl font-bold">$350</b><span
+                        class="text-4xl md:text-6xl lg:text-5xl">/</span><span
+                        class="text-2xl md:text-4xl lg:text-3xl font-bold pt-[10px]">Month</span></h1>
+                <div class="flex justify-center">
+                    <button
+                        class="w-[50%] md:w-[70%] lg:w-[100%] bg-[#FFF7E1] text-black font-bold px-[30px] py-[10px] hover:bg-black hover:text-white border-1 border-black">Get
+                        started
+                    </button>
+                </div>
+                <h1 class="flex text-xl font-bold pt-[30px] pb-[10px] justify-center lg:justify-start">Details:</h1>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon.png" alt="">
+                    <p class="mt-[2px]">Consulted by an expert</p>
+                </div>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon.png" alt="">
+                    <p class="mt-[2px]">Provide the optimal treatment plan</p>
+                </div>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon.png" alt="">
+                    <p class="mt-[2px]">In-house consultation services</p>
+                </div>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon.png" alt="">
+                    <p class="mt-[2px]">Evaluation of physiotherapy</p>
+                </div>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon.png" alt="">
+                    <p class="mt-[2px]">Consulted by an expert</p>
+                </div>
+            </div>
+            <div
+                class="w-[100%] h-[100%] lg:w-[25%] lg:h-[600px] mt-[20px] pt-[40px] pb-[20px] lg:px-[40px] lg:pt-[70px] pb-[20px] bg-[#212322] rounded-[20px]">
+                <h1 class="flex justify-center mb-[20px]"><span
+                        class="text-white bg-yellow-500 px-[20px] py-[5px] rounded-[20px]">Premium</span></h1>
+                <h1 class="text-white flex justify-center mb-[20px]"><b
+                        class="text-4xl md:text-6xl lg:text-5xl font-bold">$350</b><span
+                        class="text-4xl md:text-6xl lg:text-5xl">/</span><span
+                        class="text-2xl md:text-4xl lg:text-3xl font-bold pt-[10px]">Month</span></h1>
+                <div class="flex justify-center">
+                    <button
+                        class="w-[50%] md:w-[70%] lg:w-[100%] bg-[#212322] text-white font-bold px-[30px] py-[10px] hover:bg-yellow-400 hover:text-white border-1 border-yellow-500">Get
+                        started</button>
+                </div>
+                <h1 class="flex text-white text-xl font-bold pt-[30px] pb-[10px] justify-center lg:justify-start">
+                    Details:</h1>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon2.png" alt="">
+                    <p class="mt-[2px] text-white">Consulted by an expert</p>
+                </div>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon2.png" alt="">
+                    <p class="mt-[2px] text-white">Provide the optimal treatment plan</p>
+                </div>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon2.png" alt="">
+                    <p class="mt-[2px] text-white">In-house consultation services</p>
+                </div>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon2.png" alt="">
+                    <p class="mt-[2px] text-white">Evaluation of physiotherapy</p>
+                </div>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon2.png" alt="">
+                    <p class="mt-[2px] text-white">Consulted by an expert</p>
+                </div>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon2.png" alt="">
+                    <p class="mt-[2px] text-white">In-house consultation services</p>
+                </div>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon2.png" alt="">
+                    <p class="mt-[2px] text-white">Consulted by an expert</p>
+                </div>
+            </div>
+            <div
+                class="w-[100%] h-[100%] lg:w-[25%] lg:h-[550px] mt-[50px] pt-[40px] pb-[20px] lg:px-[40px] lg:pt-[70px] bg-[#FFF7E1] rounded-[20px]">
+                <h1 class="flex justify-center mb-[20px]"><span
+                        class="bg-yellow-500 px-[20px] py-[5px] rounded-[20px]">Special</span></h1>
+                <h1 class="flex justify-center mb-[20px]"><b
+                        class="text-4xl md:text-6xl lg:text-5xl font-bold">$350</b><span
+                        class="text-4xl md:text-6xl lg:text-5xl">/</span><span
+                        class="text-2xl md:text-4xl lg:text-3xl font-bold pt-[10px]">Month</span></h1>
+                <div class="flex justify-center">
+                    <button
+                        class="w-[50%] md:w-[70%] lg:w-[100%] bg-[#FFF7E1] text-black font-bold px-[30px] py-[10px] hover:bg-black hover:text-white border-1 border-black">Get
+                        started</button>
+                </div>
+                <h1 class="flex text-xl font-bold pt-[30px] pb-[10px] justify-center lg:justify-start">Details:</h1>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon.png" alt="">
+                    <p class="mt-[2px]">Consulted by an expert</p>
+                </div>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon.png" alt="">
+                    <p class="mt-[2px]">Provide the optimal treatment plan</p>
+                </div>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon.png" alt="">
+                    <p class="mt-[2px]">In-house consultation services</p>
+                </div>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon.png" alt="">
+                    <p class="mt-[2px]">Evaluation of physiotherapy</p>
+                </div>
+                <div class="flex gap-2 mt-[10px] justify-center lg:justify-start">
+                    <img class="w-[30px]" src="/Assets/CheckIcon.png" alt="">
+                    <p class="mt-[2px]">Consulted by an expert</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-5 w-[100%] bg-[#fff] px-[20px] lg:px-[150px] py-[80px]">
+        <div class="w-[100%] lg:w-[40%]">
+            <h1 class="text-4xl sm-text-6xl md:text-6xl lg:text-5xl font-bold px-[25px] lg:px-[20px]">Creating impact
+                with every project.</h1>
+        </div>
+        <div class="w-[100%] lg:w-[50%] px-[20px]">
+            <p>Lorem ipsum dolor sit amet consectetur. In nulla nunc arcu velit consectetur massa mauris molestie hac.
+            </p>
+            <div class="mt-[20px]">
+                <button
+                    class="bg-[#FFF7E1] text-white bg-black font-bold px-[30px] py-[10px] hover:bg-yellow-400 hover:text-white rounded-xl">Get
+                    started
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full h-[100vh] relative" id="ImpactSection">
+        <div class="carousel-container relative overflow-hidden">
+            <div class="carousel-wrapper flex transition-transform duration-800 ease-in-out">
+                <div class="carousel-slide flex-none w-full sm:w-full md:w-1/2 lg:w-1/4 px-2 relative">
+                    <div class="card rounded-[25px] min-h-[570px] md:min-h-[600px] lg:min-h-[470px] relative overflow-hidden"
+                        style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../Assets/gallery-1.png'); background-size: cover; background-position: center;">
+                        <div class="overlay absolute inset-0 bg-black" style="background-color: rgba(0, 0, 0, 0.1);">
+                        </div>
+                        <div class="text-content absolute bottom-0 left-0 p-4 text-white">
+                            <h2 class="text-4xl font-bold">Digital Marketing</h2>
+                            <p class="text-md">Lorem ipsum dolor sit amet consectetur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide flex-none w-full sm:w-full md:w-1/2 lg:w-1/4 px-2 relative">
+                    <div class="card rounded-[25px] min-h-[570px] md:min-h-[600px] lg:min-h-[470px] relative overflow-hidden"
+                        style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../Assets/gallery-2.png'); background-size: cover; background-position: center;">
+                        <div class="overlay absolute inset-0 bg-black" style="background-color: rgba(0, 0, 0, 0.1);">
+                        </div>
+                        <div class="text-content absolute bottom-0 left-0 p-4 text-white">
+                            <h2 class="text-4xl font-bold">Pakaging Design</h2>
+                            <p class="text-md">Lorem ipsum dolor sit amet consectetur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide flex-none w-full sm:w-full md:w-1/2 lg:w-1/4 px-2 relative">
+                    <div class="card rounded-[25px] min-h-[570px] md:min-h-[600px] lg:min-h-[470px] relative overflow-hidden"
+                        style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../Assets/gallery-3.png'); background-size: cover; background-position: center;">
+                        <div class="overlay absolute inset-0 bg-black" style="background-color: rgba(0, 0, 0, 0.1);">
+                        </div>
+                        <div class="text-content absolute bottom-0 left-0 p-4 text-white">
+                            <h2 class="text-4xl font-bold">Creative Photography</h2>
+                            <p class="text-md">Lorem ipsum dolor sit amet consectetur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide flex-none w-full sm:w-full md:w-1/2 lg:w-1/4 px-2 relative">
+                    <div class="card rounded-[25px] min-h-[570px] md:min-h-[600px] lg:min-h-[470px] relative overflow-hidden"
+                        style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../Assets/gallery-4.png'); background-size: cover; background-position: center;">
+                        <div class="overlay absolute inset-0 bg-black" style="background-color: rgba(0, 0, 0, 0.1);">
+                        </div>
+                        <div class="text-content absolute bottom-0 left-0 p-4 text-white">
+                            <h2 class="text-4xl font-bold">Digital Marketing</h2>
+                            <p class="text-md">Lorem ipsum dolor sit amet consectetur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide flex-none w-full sm:w-full md:w-1/2 lg:w-1/4 px-2 relative">
+                    <div class="card rounded-[25px] min-h-[570px] md:min-h-[600px] lg:min-h-[470px] relative overflow-hidden"
+                        style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../Assets/gallery-5.png'); background-size: cover; background-position: center;">
+                        <div class="overlay absolute inset-0 bg-black" style="background-color: rgba(0, 0, 0, 0.1);">
+                        </div>
+                        <div class="text-content absolute bottom-0 left-0 p-4 text-white">
+                            <h2 class="text-4xl font-bold">Pakaging Design</h2>
+                            <p class="text-md">Lorem ipsum dolor sit amet consectetur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide flex-none w-full sm:w-full md:w-1/2 lg:w-1/4 px-2 relative">
+                    <div class="card rounded-[25px] min-h-[570px] md:min-h-[600px] lg:min-h-[470px] relative overflow-hidden"
+                        style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../Assets/gallery-6.png'); background-size: cover; background-position: center;">
+                        <div class="overlay absolute inset-0 bg-black" style="background-color: rgba(0, 0, 0, 0.1);">
+                        </div>
+                        <div class="text-content absolute bottom-0 left-0 p-4 text-white">
+                            <h2 class="text-4xl font-bold">Pakaging Design</h2>
+                            <p class="text-md">Lorem ipsum dolor sit amet consectetur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide flex-none w-full sm:w-full md:w-1/2 lg:w-1/4 px-2 relative">
+                    <div class="card rounded-[25px] min-h-[570px] md:min-h-[600px] lg:min-h-[470px] relative overflow-hidden"
+                        style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../Assets/gallery-1.png'); background-size: cover; background-position: center;">
+                        <div class="overlay absolute inset-0 bg-black" style="background-color: rgba(0, 0, 0, 0.1);">
+                        </div>
+                        <div class="text-content absolute bottom-0 left-0 p-4 text-white">
+                            <h2 class="text-4xl font-bold">Digital Marketing</h2>
+                            <p class="text-md">Lorem ipsum dolor sit amet consectetur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide flex-none w-full sm:w-full md:w-1/2 lg:w-1/4 px-2 relative">
+                    <div class="card rounded-[25px] min-h-[570px] md:min-h-[600px] lg:min-h-[470px] relative overflow-hidden"
+                        style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../Assets/gallery-2.png'); background-size: cover; background-position: center;">
+                        <div class="overlay absolute inset-0 bg-black" style="background-color: rgba(0, 0, 0, 0.1);">
+                        </div>
+                        <div class="text-content absolute bottom-0 left-0 p-4 text-white">
+                            <h2 class="text-4xl font-bold">Pakaging Design</h2>
+                            <p class="text-md">Lorem ipsum dolor sit amet consectetur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div
+            class="carousel-indicators absolute bottom-[15%] left-[36%] sm:bottom-[17%] sm:left-[36%]  md:bottom-[15%] md:left-[36%] lg:bottom-[15%] lg:left-[35%] transform -translate-x-1/2 flex justify-center">
+            <button class="carousel-indicator1 w-2 h-2 md:w-3 md:h-3 lg:w-3 lg:h-3 bg-black rounded-full mx-2"></button>
+            <button class="carousel-indicator1 w-2 h-2 md:w-3 md:h-3 lg:w-3 lg:h-3 bg-white rounded-full mx-2"></button>
+            <button class="carousel-indicator1 w-2 h-2 md:w-3 md:h-3 lg:w-3 lg:h-3 bg-white rounded-full mx-2"></button>
+            <button class="carousel-indicator1 w-2 h-2 md:w-3 md:h-3 lg:w-3 lg:h-3 bg-white rounded-full mx-2"></button>
+            <button class="carousel-indicator1 w-2 h-2 md:w-3 md:h-3 lg:w-3 lg:h-3 bg-white rounded-full mx-2"></button>
+            <button class="carousel-indicator1 w-2 h-2 md:w-3 md:h-3 lg:w-3 lg:h-3 bg-white rounded-full mx-2"></button>
+        </div>
+        <div class="absolute bg-yellow-400 bottom-0 h-1/2 w-full z-[-1]"></div>
+    </div>
+
+    <div class="w-[100%] bg-[#212322] pt-[100px] pb-[60px]" id="Professionals">
+        <div class="flex flex-col lg:flex-row justify-center">
+            <!-- Left Content Section -->
+            <div class="w-[100%] lg:w-[40%] pl-[20px] lg:pl-[60px] pt-[90px]">
+                <h1 class="text-white text-4xl md:text-6xl lg:text-6xl">Meet Our Professionals</h1>
+                <p class="text-white text-sm md:text-md lg:text-lg mt-[20px]">
+                    Lorem ipsum dolor sit amet consectetur. In nulla nunc arcu velit consectetur massa mauris molestie
+                    hac.
+                    Hac arcu amet nullam pellentesque. Urna eu suspendisse felis sodales sit non.
+                </p>
+                <div class="mt-[20px]">
+                    <button
+                        class="bg-[#FFF7E1] text-white bg-pink-600 font-bold px-[30px] py-[10px] hover:bg-yellow-400 hover:text-white rounded-xl">
+                        Meet With Us
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Carousel Section -->
+            <div class="w-full lg:w-3/5 pl-[20px] lg:pl-12 pt-10">
+                <div class="carousel-container overflow-hidden relative">
+                    <!-- Carousel Wrapper with Slides -->
+                    <div class="carousel-wrapper flex transition-transform duration-800 ease-in-out">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide w-full md:w-1/2 lg:w-1/2 lg:px-2 flex-shrink-0">
+                            <div class="Prof-img flex justify-center">
+                                <img class="w-[70%] sm:w-[50%] md:w-[70%] lg:w-[80%] h-full rounded-full"
+                                    src="/Assets/Team-1.png" alt="">
+                            </div>
+                            <h1 class="text-3xl text-white flex justify-center mt-4 font-bold">Sophia Emma</h1>
+                            <p class="text-white flex justify-center mt-4">Content Manager</p>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide w-full md:w-1/2 lg:w-1/2 lg:px-2 flex-shrink-0">
+                            <div class="Prof-img flex justify-center">
+                                <img class="w-[70%] sm:w-[50%] md:w-[70%] lg:w-[80%] h-full rounded-full"
+                                    src="/Assets/Team-2.png" alt="">
+                            </div>
+                            <h1 class="text-3xl text-white flex justify-center mt-4 font-bold">David Henry</h1>
+                            <p class="text-white flex justify-center mt-4">Content Manager</p>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide w-full md:w-1/2 lg:w-1/2 lg:px-2 flex-shrink-0">
+                            <div class="Prof-img flex justify-center">
+                                <img class="w-[70%] sm:w-[50%] md:w-[70%] lg:w-[80%] h-full rounded-full"
+                                    src="/Assets/Team-3.png" alt="">
+                            </div>
+                            <h1 class="text-3xl text-white flex justify-center mt-4 font-bold">Marcelo Neo</h1>
+                            <p class="text-white flex justify-center mt-4">Graphic Designer</p>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="carousel-slide w-full md:w-1/2 lg:w-1/2 lg:px-2 flex-shrink-0">
+                            <div class="Prof-img flex justify-center">
+                                <img class="w-[70%] sm:w-[50%] md:w-[70%] lg:w-[80%] h-full rounded-full"
+                                    src="/Assets/Team-1.png" alt="">
+                            </div>
+                            <h1 class="text-3xl text-white flex justify-center mt-4 font-bold">Marcelo Neo</h1>
+                            <p class="text-white flex justify-center mt-4">Graphic Designer</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel Indicators Section -->
+                <div class="carousel-indicators flex justify-center mt-4 relative z-10">
+                    <!-- Indicator 1 -->
+                    <button
+                        class="carousel-indicator w-2 h-2 md:w-3 md:h-3 lg:w-3 lg:h-3 bg-white rounded-full mx-2"></button>
+                    <!-- Indicator 2 -->
+                    <button
+                        class="carousel-indicator w-2 h-2 md:w-3 md:h-3 lg:w-3 lg:h-3 bg-white rounded-full mx-2"></button>
+                    <!-- Indicator 3 -->
+                    <button
+                        class="carousel-indicator w-2 h-2 md:w-3 md:h-3 lg:w-3 lg:h-3 bg-white rounded-full mx-2"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-[100%] h-[100%] pt-[70px] pb-[70px]" id="Testimonials">
+        <div class="mb-[40px]">
+            <h1 class="text-5xl md:text-6xl lg:text-6xl font-bold flex justify-center mb-[15px]">Testimonials</h1>
+            <p class="text-md lg:text-lg flex justify-center">Lorem ipsum dolor sit amet consectetur. In nulla nunc arcu
+                velit consectetur massa mauris</p>
+            <p class="text-md lg:text-lg flex justify-center">molestie hac.</p>
+        </div>
+        <div class="flex gap-4 flex-col lg:flex-row mb-[30px]">
+            <div class="w-[5%]"></div>
+            <div class="w-[100%] lg:w-[60%] bg-[#FFF5D8] rounded-[20px] px-[20px] py-[20px] lg:px-[60px] lg:py-[50px]">
+                <h1 class="text-2xl font-bold mb-[10px]">GREAT MARKETING AGENCY!</h1>
+                <div class="mb-[10px]">
+                    <p>Lorem ipsum dolor sit amet consectetur. Nunc risus pellentesque vehicula enim</p>
+                    <p>aenean aliquam. Ac quam enim feugiat nam. Adipiscing vel sed aliquam enim et</p>
+                    <p>pretium aliquam mattis nulla. Nunc faucibus id lorem.</p>
+                </div>
+                <div class="flex mb-[10px]">
+                    <img src="/Assets/Star.png" class="w-[25px] h-[25px]" alt="">
+                    <img src="/Assets/Star.png" class="w-[25px] h-[25px]" alt="">
+                    <img src="/Assets/Star.png" class="w-[25px] h-[25px]" alt="">
+                    <img src="/Assets/Star.png" class="w-[25px] h-[25px]" alt="">
+                    <img src="/Assets/Star.png" class="w-[25px] h-[25px]" alt="">
+                </div>
+                <h1 class="text-xl text-yellow-400 font-bold">Angela</h1>
+                <p class="text-md">Content Manager</p>
+            </div>
+            <div class="w-[100%] lg:w-[30%] flex justify-center pt-[20px] lg:pt-0">
+                <img src="/Assets/tes-1.png" class="w-full md:w-[90%] lg:w-[100%] rounded-[30px]" alt="">
+            </div>
+            <div class="w-[5%]"></div>
+        </div>
+        <div class="flex gap-4 flex-col flex-col-reverse lg:flex-row">
+            <div class="lg:w-[5%]"></div>
+            <div class="w-[100%] lg:w-[30%] flex justify-center pb-[20px] lg:pb-0">
+                <img src="/Assets/tes-2.png" class="w-full md:w-[90%] lg:w-[100%] rounded-[30px]" alt="">
+            </div>
+            <div class="w-[100%] lg:w-[60%] bg-[#FFF5D8] rounded-[20px] px-[20px] py-[20px] lg:px-[60px] lg:py-[50px]">
+                <h1 class="text-2xl font-bold mb-[10px]">SOCIAL MEDIA AGENCY!</h1>
+                <div class="mb-[10px]">
+                    <p>Lorem ipsum dolor sit amet consectetur. Nunc risus pellentesque vehicula enim</p>
+                    <p>aenean aliquam. Ac quam enim feugiat nam. Adipiscing vel sed aliquam enim et</p>
+                    <p>pretium aliquam mattis nulla. Nunc faucibus id lorem.</p>
+                </div>
+                <div class="flex mb-[10px]">
+                    <img src="/Assets/Star.png" class="w-[25px] h-[25px]" alt="">
+                    <img src="/Assets/Star.png" class="w-[25px] h-[25px]" alt="">
+                    <img src="/Assets/Star.png" class="w-[25px] h-[25px]" alt="">
+                    <img src="/Assets/Star.png" class="w-[25px] h-[25px]" alt="">
+                    <img src="/Assets/Star.png" class="w-[25px] h-[25px]" alt="">
+                </div>
+                <h1 class="text-xl text-yellow-400 font-bold">Indra Muliana</h1>
+                <p class="text-md">Graphic Designer</p>
+            </div>
+            <div class="lg:w-[5%]"></div>
+        </div>
+    </div>
+
+    <div class="w-[100%] h-[100%] pt-[80px] pb-[250px] lg:pb-[350px] bg-[#212322]" id="FAQS">
+        <div class="flex gap-4 flex-col items-center lg:flex-row">
+            <div class="w-[5%]"></div>
+            <div class="w-[100%] md:w-[80%] lg:w-[50%] mt-[30px]">
+                <div id="accordion-color" data-accordion="collapse"
+                    data-active-classes="bg-[#212322] dark:bg-[#212322]">
+                    <h2 id="accordion-color-heading-1">
+                        <button type="button"
+                            class="flex items-center justify-between w-full py-[40px] px-[20px] text-xl font-bold rtl:text-right text-white  border-b border-lightgray-200 rounded-t-xl  dark:border-black dark:text-white hover:bg-[#212322] dark:hover:bg-[#212322] gap-3"
+                            data-accordion-target="#accordion-color-body-1" aria-expanded="false"
+                            aria-controls="accordion-color-body-1">
+                            <span>Ut neque augue interdum ad integer tempus convallis?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M9 5 5 1 1 5" />
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-color-body-1" class="hidden" aria-labelledby="accordion-color-heading-1">
+                        <div class="py-[20px] px-[20px] border-b-0 border-black dark:border-black dark:bg-black">
+                            <p class="mb-2 text-white dark:text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In vitae turpis massa sed elementum tempus egestas sed. Diam in arcu cursus euismod.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="accordion-color2" data-accordion="collapse"
+                    data-active-classes="bg-[#212322] dark:bg-[#212322]">
+                    <h2 id="accordion-color-heading-2">
+                        <button type="button"
+                            class="flex items-center justify-between w-full py-[40px] px-[20px] text-xl font-bold rtl:text-right text-white  border-b border-lightgray-200 rounded-t-xl  dark:border-black dark:text-white hover:bg-[#212322] dark:hover:bg-[#212322] gap-3"
+                            data-accordion-target="#accordion-color-body-2" aria-expanded="false"
+                            aria-controls="accordion-color-body-2">
+                            <span>Dictum feugiat tincidunt nam commodo?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M9 5 5 1 1 5" />
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
+                        <div class="py-[20px] px-[20px] border-b-0 border-black dark:border-black dark:bg-black">
+                            <p class="mb-2 text-white dark:text-white"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In vitae turpis massa sed elementum tempus egestas sed. Diam in arcu cursus euismod.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="accordion-color3" data-accordion="collapse"
+                    data-active-classes="bg-[#212322] dark:bg-[#212322]">
+                    <h2 id="accordion-color-heading-3">
+                        <button type="button"
+                            class="flex items-center justify-between w-full py-[40px] px-[20px] text-xl font-bold rtl:text-right text-white  border-b border-lightgray-200 rounded-t-xl  dark:border-black dark:text-white hover:bg-[#212322] dark:hover:bg-[#212322] gap-3"
+                            data-accordion-target="#accordion-color-body-3" aria-expanded="false"
+                            aria-controls="accordion-color-body-3">
+                            <span>Scelerisque metus sem nostra pulvinar sagittis?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M9 5 5 1 1 5" />
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
+                        <div class="py-[20px] px-[20px] border-b-0 border-black dark:border-black dark:bg-black">
+                            <p class="mb-2 text-white dark:text-white"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In vitae turpis massa sed elementum tempus egestas sed. Diam in arcu cursus euismod.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="accordion-color4" data-accordion="collapse"
+                    data-active-classes="bg-[#212322] dark:bg-[#212322]">
+                    <h2 id="accordion-color-heading-4">
+                        <button type="button"
+                            class="flex items-center justify-between w-full py-[40px] px-[20px] text-xl font-bold rtl:text-right text-white  border-b border-lightgray-200 rounded-t-xl  dark:border-black dark:text-white hover:bg-[#212322] dark:hover:bg-[#212322] gap-3"
+                            data-accordion-target="#accordion-color-body-4" aria-expanded="false"
+                            aria-controls="accordion-color-body-4">
+                            <span>Consectetur scelerisque lacus gravida proin dolor sem?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M9 5 5 1 1 5" />
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-color-body-4" class="hidden" aria-labelledby="accordion-color-heading-4">
+                        <div class="py-[20px] px-[20px] border-b-0 border-black dark:border-black dark:bg-black">
+                            <p class="mb-2 text-white dark:text-white"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In vitae turpis massa sed elementum tempus egestas sed. Diam in arcu cursus euismod.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="w-[40%] ml-[20px]">
+                <div class="flex justify-center relative">
+                    <img src="/Assets/FAQ.png" class="w-[100%] lg:w-[90%] rounded-[100%]" alt="">
+                    <div class="absolute top-[35%] right-[45%] lg:top-[45%] lg:right-[60%]">
+                        <h1 class="text-white text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">FAQs</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[5%]"></div>
+        </div>
+    </div>
+
+    <div id="LetsTalk" class="w-[100%] h-[100%] pt-[70px] pb-[40px] flex justify-center">
+        <div class="w-full lg:w-[90%] flex flex-col md:flex-row lg:flex-row justify-center items-center gap-3 pl-[20px] py-[60px] rounded-[20px] mt-[-300px] bg-white border-1 border-gray-300">
+            <div class="w-full lg:w-[45%]">
+               <h1 class="text-5xl font-bold mb-[15px]">Let’s Talk</h1>
+               <p class="text-md mb-[40px]">Lorem ipsum dolor sit amet consectetur. In nulla nunc arcu velit consectetur massa mauris molestie hac.</p>
+                <div class="flex gap-3">
+                    <div class="flex justify-center items-center rounded-[100%] border-2 border-yellow-400 p-1">
+                        <img src="/Assets/House.png" class="w-[45px] h-[40px]" alt="">
+                    </div>
+                    <div class="mt-[5px]">
+                        <h1 class="text-xl font-bold text-yellow-500 tracking-wide">Address</h1>
+                        <p>Plaza X, XY Floor, XYZ Street</p>
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-[30px]">
+                    <div class="flex justify-center items-center rounded-[100%] border-2 border-yellow-400 p-1">
+                        <img src="/Assets/Mail.png" class="w-[45px] h-[40px]" alt="">
+                    </div>
+                    <div class="mt-[5px]">
+                        <h1 class="text-xl font-bold text-yellow-500 tracking-wide">Email Address</h1>
+                        <p>Yourname@email.com</p>
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-[30px]">
+                    <div class="flex justify-center items-center rounded-[100%] border-2 border-yellow-400 p-1">
+                        <img src="/Assets/Call.png" class="w-[45px] h-[40px]" alt="">
+                    </div>
+                    <div class="mt-[5px]">
+                        <h1 class="text-xl font-bold text-yellow-500 tracking-wide">Phone Number</h1>
+                        <p>123-456-7890</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full lg:w-[45%]">
+                <div class="mt-[30px]">
+                     <div class="flex gap-3">
+                        <input type="text" id="Name" class="w-[50%] rounded-lg px-[20px] py-[10px] border-1 border-yellow-500 focus:border-yellow-500 focus:ring-0" placeholder="Your Name" required>
+                        <input type="email" id="Email" class="w-[50%] rounded-lg px-[20px] py-[10px] border-1 border-yellow-500 focus:border-yellow-500 focus:ring-0" placeholder="Email" required>
+                     </div><br>
+                     <div>
+                        <input type="text" id="Phone" class="w-[100%] rounded-lg px-[20px] py-[10px] border-1 border-yellow-500 focus:border-yellow-500 focus:ring-0" placeholder="Phone Number" required>
+                     </div><br>
+                     <div>
+                        <textarea name="Message" id="Message" class="w-[100%] h-[10vh] lg:h-[20vh] rounded-lg px-[20px] py-[15px] border-1 border-yellow-500 focus:border-yellow-500 focus:ring-0" placeholder="Write Here Message" required></textarea>
+                     </div>
+                     <div class="mt-[20px]">
+                        <button
+                            class="bg-[#FFF7E1] text-white bg-pink-600 font-bold px-[30px] py-[10px] hover:bg-yellow-400 hover:text-white rounded-xl">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-[100%] h-[100%] pt-[70px] pb-[60px] flex justify-center">
+        <div class="w-full lg:w-[80%] bg-yellow-500 py-[70px] rounded-[30px]">
+            <div class="w-[100%]">
+                <h1 class="text-xl md:text-3xl lg:text-4xl font-bold flex justify-center">Subscribe our newsletter to get</h1>
+                <h1 class="text-xl md:text-3xl lg:text-4xl font-bold flex justify-center">best advice on Marketing</h1>
+            </div>
+            <div class="w-[100%] flex justify-center">
+                <div class="w-[70%] md:w-[60%] lg:w-[40%] mt-[20px] bg-white rounded-lg">
+                    <div class="flex px-[20px] lg:px-[5px] py-[5px]">
+                        <input type="email" name="email" id="Email" class="w-[100%] border-none outline-none focus:outline-none focus:ring-0" placeholder="Enter your Email" required>
+                        <div class="">
+                            <button
+                                class="bg-[#FFF7E1] text-white bg-pink-600 font-bold px-[10px] py-[5px] hover:bg-yellow-400 hover:text-white rounded-lg">
+                                <img src="/Assets/Send.png" class="w-[30px] h-[30px]" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    <div class="w-[100%] h-[100%] pt-[100px] pb-[20px] bg-[#212322]" id="Footer">
+        <div class="flex justify-center">
+            <img src="/Assets/navlogo.svg" alt="">
+        </div>
+        <div class="flex justify-center mt-[30px]">
+            <div class="flex gap-3">
+                <a href="#"><img src="/Assets/Fblogo.png" class="w-[20px] h-[25px]" alt=""></a>
+                <a href="#"><img src="/Assets/Instalogo.png" alt="" class="w-[25px] h-[25px]"></a>
+                <a href="#"><img src="/Assets/Twitterlogo.png" alt="" class="w-[38px] h-[25px]"></a>
+                <a href="#"><img src="/Assets/Maillogo.png" alt="" class="w-[25px] h-[25px]"></a>
+            </div>
+        </div>
+        <div class="w-[100%] mt-[30px] lg:pl-[130px]">
+            <div class="flex justify-center">
+                <div class="w-full lg:w-[50%] flex gap-2">
+                    <div class="w-full lg:w-[20%]">
+                        <h1 class="text-sm sm:text-md lg:text-lg text-white">Opening Hours</h1>
+                    </div>
+                    <div class="w-full lg:w-[5%]">
+                        <h1 class="text-sm sm:text-md lg:text-lg text-white">|</h1>
+                    </div>
+                    <div class="w-full lg:w-[20%]">
+                        <h1 class="text-sm sm:text-md lg:text-lg text-white">Sunday - Friday</h1>
+                    </div>
+                    <div class="w-full lg:w-[5%]">
+                        <h1 class="text-sm sm:text-md lg:text-lg text-white">|</h1>
+                    </div>
+                    <div class="w-full lg:w-[25%]">
+                        <h1 class="text-sm sm:text-md lg:text-lg text-white">08:00 AM - 05:00 PM</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-[100%] flex justify-center">
+            <div class="w-[85%] flex justify-center mt-[20px] border-t-2 border-[#AAAAAA] pt-[10px]">
+                <p class="text-md text-[#AAAAAA]">Copyright © 2024 Marketi-Verse By Evonicmedia. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        xs: "340px",
+                        "3xl": "1800px",
+                    },
+                },
+            },
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const cards = document.querySelectorAll(".CaseStudyCards > div:not(.third-card)");
+            const thirdCardContent = document.querySelector(".third-card-content");
+
+            cards.forEach(card => {
+                card.addEventListener("mouseenter", () => {
+                    thirdCardContent.style.opacity = 0; // Hide the third card content
+                });
+
+                card.addEventListener("mouseleave", () => {
+                    thirdCardContent.style.opacity = 1; // Show the third card content
+                });
+            });
+        });
+
+        // Carousel 1: Impact Section
+        const carouselWrapper1 = document.querySelector('#ImpactSection .carousel-wrapper');
+        const slides1 = document.querySelectorAll('#ImpactSection .carousel-slide');
+        const indicators1 = document.querySelectorAll('#ImpactSection .carousel-indicator1'); // Use unique class for indicators
+        let currentSlide1 = 0;
+
+        function updateCarousel1() {
+            const windowWidth = window.innerWidth;
+            let slidesToShow1;
+
+            if (windowWidth >= 1024) { // Large devices
+                slidesToShow1 = 4;
+            } else if (windowWidth >= 768) { // Medium devices
+                slidesToShow1 = 2;
+            } else { // Small devices
+                slidesToShow1 = 1;
+            }
+
+            // Calculate the offset for transforming the carousel
+            const offset1 = -(currentSlide1 * 100) / slidesToShow1;
+            carouselWrapper1.style.transform = `translateX(${offset1}%)`;
+
+            // Update indicators for Carousel 1
+            indicators1.forEach((indicator, index) => {
+                indicator.classList.toggle('bg-black', index === currentSlide1);
+                indicator.classList.toggle('bg-white', index !== currentSlide1);
+            });
+        }
+
+        // Event listener for window resizing to recalculate slides for Carousel 1
+        window.addEventListener('resize', updateCarousel1);
+
+        // Event listener for indicators for Carousel 1
+        indicators1.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide1 = index;
+                updateCarousel1();
+            });
+        });
+
+        // Initial setup for Carousel 1
+        updateCarousel1();
+
+
+        // Carousel 2: Professionals Section
+        const carouselWrapper2 = document.querySelector('#Professionals .carousel-wrapper');
+        const slides2 = document.querySelectorAll('#Professionals .carousel-slide');
+        const indicators2 = document.querySelectorAll('#Professionals .carousel-indicator');
+        let currentSlide2 = 0;
+
+        function updateCarousel2() {
+            const windowWidth = window.innerWidth;
+            let slidesToShow2;
+
+            if (windowWidth >= 1024) { // Large devices
+                slidesToShow2 = 2;
+            } else if (windowWidth >= 768) { // Medium devices
+                slidesToShow2 = 2;
+            } else { // Small devices
+                slidesToShow2 = 1;
+            }
+
+            // Calculate the offset for transforming the carousel
+            const offset2 = -(currentSlide2 * 100) / slidesToShow2;
+            carouselWrapper2.style.transform = `translateX(${offset2}%)`;
+
+            // Update indicators for Carousel 2
+            indicators2.forEach((indicator, index) => {
+                indicator.classList.toggle('bg-yellow-400', index === currentSlide2);
+                indicator.classList.toggle('bg-white', index !== currentSlide2);
+            });
+        }
+
+        // Event listener for window resizing to recalculate slides for Carousel 2
+        window.addEventListener('resize', updateCarousel2);
+
+        // Event listener for indicators for Carousel 2
+        indicators2.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide2 = index;
+                updateCarousel2();
+            });
+        });
+
+        // Initial setup for Carousel 2
+        updateCarousel2();
+
+
+
+
+
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+</body>
+
+</html>
